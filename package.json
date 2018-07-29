@@ -1,0 +1,76 @@
+{
+  "name": "npm-registry-docker",
+  "description": "Couchdb Docker image running npm-registry-couchapp",
+  "version": "0.0.0-development",
+  "author": "Pierre Vanduynslager (https://twitter.com/@pvdlg_)",
+  "bugs": {
+    "url": "https://github.com/semantic-release/npm-registry-docker/issues"
+  },
+  "dependencies": {
+    "npm-registry-couchapp": "^2.7.1"
+  },
+  "devDependencies": {
+    "@semantic-release/exec": "^2.3.0",
+    "@semantic-release/github": "^5.0.1",
+    "ava": "^0.25.0",
+    "delay": "^3.0.0",
+    "dockerode": "^2.5.5",
+    "execa": "^0.10.0",
+    "fs-extra": "^7.0.0",
+    "got": "^8.3.2",
+    "p-retry": "^2.0.0",
+    "semantic-release": "^15.0.0",
+    "tempy": "^0.2.1",
+    "xo": "^0.21.1"
+  },
+  "private": true,
+  "homepage": "https://github.com/semantic-release/npm-registry-docker#readme",
+  "keywords": [
+    "couchapp",
+    "couchdb",
+    "docker",
+    "npm",
+    "npm-registry-couchapp",
+    "registry"
+  ],
+  "license": "MIT",
+  "prettier": {
+    "printWidth": 120,
+    "trailingComma": "es5"
+  },
+  "release": {
+    "verifyConditions": [
+      "@semantic-release/github",
+      {
+        "path": "@semantic-release/exec",
+        "cmd": "docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD"
+      }
+    ],
+    "prepare": false,
+    "publish": [
+      {
+        "path": "@semantic-release/exec",
+        "cmd": "docker tag semanticrelease/npm-registry-docker:latest semanticrelease/npm-registry-docker:${nextRelease.version} && docker push semanticrelease/npm-registry-docker:latest && docker push semanticrelease/npm-registry-docker:${nextRelease.version}"
+      },
+      "@semantic-release/github"
+    ],
+    "success": [
+      "@semantic-release/github"
+    ],
+    "fail": [
+      "@semantic-release/github"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/semantic-release/npm-registry-docker.git"
+  },
+  "scripts": {
+    "pretest": "xo",
+    "test": "ava -v"
+  },
+  "xo": {
+    "prettier": true,
+    "space": true
+  }
+}
