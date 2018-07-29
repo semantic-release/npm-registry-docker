@@ -2,6 +2,9 @@
 
 [CouchDB Docker image](https://github.com/apache/couchdb-docker) running [npm-registry-couchapp](https://github.com/npm/npm-registry-couchapp).
 
+[![Travis](https://img.shields.io/travis/com/semantic-release/npm-registry-docker.svg)](https://travis-ci.com/semantic-release/npm-registry-docker)
+[![Greenkeeper badge](https://badges.greenkeeper.io/semantic-release/npm-registry-docker.svg)](https://greenkeeper.io/)
+
 This docker image is for test and development purposes only.
 
 ## Install
