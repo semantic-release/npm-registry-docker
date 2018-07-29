@@ -1,0 +1,29 @@
+language: node_js
+
+services:
+  - docker
+
+node_js: lts/*
+
+branches:
+  only:
+    - master
+    - /^greenkeeper.*$/
+
+cache:
+  directories:
+    - ~/.npm
+
+install:
+  - travis_retry npm install
+
+script:
+  - find ./scripts -type f -exec "shellcheck" "-x" {} \;
+  - docker build -t semanticrelease/npm-registry-docker .
+  - npm run test
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+    - npx semantic-release
