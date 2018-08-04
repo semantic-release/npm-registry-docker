@@ -17,7 +17,7 @@
     "dockerode": "^2.5.5",
     "execa": "^0.10.0",
     "fs-extra": "^7.0.0",
-    "got": "^8.3.2",
+    "got": "^9.0.0",
     "p-retry": "^2.0.0",
     "semantic-release": "^15.0.0",
     "tempy": "^0.2.1",
