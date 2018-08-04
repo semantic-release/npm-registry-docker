@@ -10,7 +10,7 @@
     "npm-registry-couchapp": "^2.7.1"
   },
   "devDependencies": {
-    "@semantic-release/exec": "^2.3.0",
+    "@semantic-release/exec": "^3.0.0",
     "@semantic-release/github": "^5.0.1",
     "ava": "^0.25.0",
     "delay": "^3.0.0",
