@@ -21,7 +21,7 @@
     "p-retry": "^2.0.0",
     "semantic-release": "^15.0.0",
     "tempy": "^0.2.1",
-    "xo": "^0.21.1"
+    "xo": "^0.22.0"
   },
   "private": true,
   "homepage": "https://github.com/semantic-release/npm-registry-docker#readme",
