@@ -1,5 +1,5 @@
 # Build stage
-FROM apache/couchdb:2.1 as builder
+FROM apache/couchdb:2.3 as builder
 
 MAINTAINER Pierre Vanduynslager pierre.denis.vanduynslager@gmail.com
 
@@ -22,7 +22,7 @@ COPY scripts/constants.sh scripts/functions.sh scripts/init-couchdb.sh ./
 RUN ./init-couchdb.sh
 
 # Image stage
-FROM apache/couchdb:2.1
+FROM apache/couchdb:2.3
 
 # Retrieve data and config
 COPY --from=builder /usr/local/var/lib/couchdb /usr/local/var/lib/couchdb
