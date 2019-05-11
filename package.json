@@ -16,7 +16,7 @@
     "delay": "^4.0.0",
     "dockerode": "^2.5.5",
     "execa": "^1.0.0",
-    "fs-extra": "^7.0.0",
+    "fs-extra": "^8.0.0",
     "got": "^9.0.0",
     "p-retry": "^4.0.0",
     "semantic-release": "^15.0.0",
