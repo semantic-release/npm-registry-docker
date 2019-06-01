@@ -3,6 +3,14 @@
   "description": "Couchdb Docker image running npm-registry-couchapp",
   "version": "0.0.0-development",
   "author": "Pierre Vanduynslager (https://twitter.com/@pvdlg_)",
+  "ava": {
+    "files": [
+      "test/**/*.test.js"
+    ],
+    "helpers": [
+      "test/helpers/**/*"
+    ]
+  },
   "bugs": {
     "url": "https://github.com/semantic-release/npm-registry-docker/issues"
   },
@@ -12,7 +20,7 @@
   "devDependencies": {
     "@semantic-release/exec": "^3.0.1",
     "@semantic-release/github": "^5.0.1",
-    "ava": "^1.0.1",
+    "ava": "^2.0.0",
     "delay": "^4.0.0",
     "dockerode": "^2.5.5",
     "execa": "^1.0.0",
@@ -23,7 +31,6 @@
     "tempy": "^0.3.0",
     "xo": "^0.24.0"
   },
-  "private": true,
   "homepage": "https://github.com/semantic-release/npm-registry-docker#readme",
   "keywords": [
     "couchapp",
@@ -38,6 +45,7 @@
     "printWidth": 120,
     "trailingComma": "es5"
   },
+  "private": true,
   "release": {
     "verifyConditions": [
       "@semantic-release/github",
