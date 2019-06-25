@@ -55,23 +55,23 @@ email = ${NPM_EMAIL}
 registry = ${npmRegistry.url}
 `
   );
-  t.is(await execa.stdout('npm', ['whoami'], {cwd, env}), NPM_USERNAME);
+  t.is((await execa('npm', ['whoami'], {cwd, env})).stdout, NPM_USERNAME);
 
   t.log('Publish package');
   await writeJson(path.resolve(cwd, 'package.json'), {name, version});
-  let {code} = await execa('npm', ['publish'], {cwd, env});
-  t.is(code, 0);
-  t.is(await execa.stdout('npm', ['view', name, 'version'], {cwd, env}), version);
+  let {exitCode} = await execa('npm', ['publish'], {cwd, env});
+  t.is(exitCode, 0);
+  t.is((await execa('npm', ['view', name, 'version'], {cwd, env})).stdout, version);
 
   t.log('Publish on @next');
   version = '1.1.0';
-  await execa.stdout('npm', ['version', version], {cwd, env});
-  ({code} = await execa('npm', ['publish', '--tag', 'next'], {cwd, env}));
-  t.is(code, 0);
-  t.is(await execa.stdout('npm', ['view', name, 'dist-tags.next'], {cwd, env}), version);
+  await execa('npm', ['version', version], {cwd, env});
+  ({exitCode} = await execa('npm', ['publish', '--tag', 'next'], {cwd, env}));
+  t.is(exitCode, 0);
+  t.is((await execa('npm', ['view', name, 'dist-tags.next'], {cwd, env})).stdout, version);
 
   t.log('Add to @latest');
-  ({code} = await execa('npm', ['dist-tag', 'add', `${name}@${version}`, 'latest'], {cwd, env}));
-  t.is(code, 0);
-  t.is(await execa.stdout('npm', ['view', name, 'dist-tags.latest'], {cwd, env}), version);
+  ({exitCode} = await execa('npm', ['dist-tag', 'add', `${name}@${version}`, 'latest'], {cwd, env}));
+  t.is(exitCode, 0);
+  t.is((await execa('npm', ['view', name, 'dist-tags.latest'], {cwd, env})).stdout, version);
 });
