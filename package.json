@@ -22,7 +22,7 @@
     "@semantic-release/github": "^5.0.1",
     "ava": "^2.0.0",
     "delay": "^4.0.0",
-    "dockerode": "^2.5.5",
+    "dockerode": "^3.0.0",
     "execa": "^2.0.1",
     "fs-extra": "^8.0.0",
     "got": "^9.0.0",
