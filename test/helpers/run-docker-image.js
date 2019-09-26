@@ -29,7 +29,7 @@ async function start({COUCHDB_USER, COUCHDB_PASSWORD}) {
       minTimeout: 1000,
       factor: 2,
     });
-  } catch (error) {
+  } catch (_) {
     throw new Error(`Couldn't start npm-registry-docker after 2 min`);
   }
 }
