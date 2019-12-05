@@ -75,7 +75,8 @@
   },
   "scripts": {
     "pretest": "xo",
-    "test": "ava -v"
+    "semantic-release": "semantic-release",
+    "test": "ava -v"    
   },
   "xo": {
     "prettier": true,
