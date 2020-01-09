@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@semantic-release/exec": "^3.0.1",
-    "@semantic-release/github": "^5.0.1",
+    "@semantic-release/github": "^6.0.0",
     "ava": "^2.0.0",
     "delay": "^4.0.0",
     "dockerode": "^3.0.0",
