@@ -1,10 +1,10 @@
-import path from 'path';
-import test from 'ava';
-import {writeJson, appendFile} from 'fs-extra';
-import execa from 'execa';
-import got from 'got';
-import tempy from 'tempy';
-import npmRegistry from './helpers/run-docker-image';
+const path = require('path');
+const test = require('ava');
+const {writeJson, appendFile} = require('fs-extra');
+const execa = require('execa');
+const got = require('got');
+const tempy = require('tempy');
+const npmRegistry = require('./helpers/run-docker-image');
 
 /* eslint camelcase: ["error", {properties: "never"}] */
 

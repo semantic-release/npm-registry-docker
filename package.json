@@ -7,9 +7,7 @@
     "files": [
       "test/**/*.test.js"
     ],
-    "helpers": [
-      "test/helpers/**/*"
-    ]
+    "timeout": "2m"
   },
   "bugs": {
     "url": "https://github.com/semantic-release/npm-registry-docker/issues"
@@ -20,7 +18,7 @@
   "devDependencies": {
     "@semantic-release/exec": "^4.0.0",
     "@semantic-release/github": "^6.0.0",
-    "ava": "^2.0.0",
+    "ava": "^3.1.0",
     "delay": "^4.0.0",
     "dockerode": "^3.0.0",
     "execa": "^4.0.0",
