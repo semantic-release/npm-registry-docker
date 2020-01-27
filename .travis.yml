@@ -6,6 +6,7 @@ services:
 node_js: lts/*
 
 script:
+  - npm run test
   - find ./scripts -type f -exec "shellcheck" "-x" {} \;
   - docker build -t semanticrelease/npm-registry-docker .
 
