@@ -25,7 +25,7 @@
     "fs-extra": "^9.0.0",
     "got": "^10.0.0",
     "p-retry": "^4.0.0",
-    "semantic-release": "^17.0.0",
+    "semantic-release": "^19.0.0",
     "tempy": "^0.5.0",
     "xo": "^0.28.0"
   },
