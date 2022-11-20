@@ -19,7 +19,7 @@
     "@semantic-release/exec": "^5.0.0",
     "@semantic-release/github": "^7.0.0",
     "ava": "^3.1.0",
-    "delay": "^4.0.0",
+    "delay": "^5.0.0",
     "dockerode": "^3.0.0",
     "execa": "^4.0.0",
     "fs-extra": "^9.0.0",
